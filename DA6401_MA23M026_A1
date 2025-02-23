@@ -1,1 +1,2 @@
-print("hello")
+This assignment focuses on implementing deep learning models for image classification. It involves preprocessing data, designing neural network architectures, training models, and evaluating their performance.
+
