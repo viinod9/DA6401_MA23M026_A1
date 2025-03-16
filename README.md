@@ -51,19 +51,12 @@ Each optimization algorithm is implemented as a separate function:
    ```bash
    pip install numpy keras wandb matplotlib
    ```
-2. Clone the repository and navigate to the project folder:
-   ```bash
-   git clone <repo-link>
-   cd <repo-folder>
-   ```
+
 3. Train the model:
    ```bash
    python train.py
    ```
-4. Run hyperparameter tuning:
-   ```bash
-   python hyperparameter_tuning.py
-   ```
+
 
 ## Acknowledgments
-This project was developed as part of an academic assignment for training a neural network from scratch using backpropagation on the Fashion-MNIST dataset.
+This project was developed as part of an academic assignment DA6401 for training a neural network from scratch using backpropagation on the Fashion-MNIST dataset.
