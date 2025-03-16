@@ -1,147 +1,72 @@
-README - Feedforward Neural Network on Fashion-MNIST
-
-**Problem Statement**
-
-In this assignment, we implement a feedforward neural network from scratch and write the backpropagation code for training the network. We use NumPy for matrix and vector operations without any automatic differentiation libraries. The network is trained and tested on the Fashion-MNIST dataset to classify images into 10 categories.
-
-Dataset
-
-The dataset consists of 60,000 training images and 10,000 test images, each of size 28x28 pixels in grayscale. The 10 clothing categories are:
-
-T-shirt/top
-
-Trouser
-
-Pullover
-
-Dress
-
-Coat
-
-Sandal
-
-Shirt
-
-Sneaker
-
-Bag
-
-Ankle boot
-
-Code Structure
-
-The implementation consists of the following Python scripts:
-
-train.py: Implements the feedforward neural network, backpropagation, and training process.
-
-utils.py: Contains helper functions for data preprocessing, weight initialization, and activation functions.
-
-sweep.py: Defines the hyperparameter tuning strategy using Weights & Biases (WandB).
-
-Implementation Details
-
-1. Data Preprocessing
-
-Loaded the Fashion-MNIST dataset using keras.datasets.fashion_mnist.
-
-Normalized the pixel values for efficient training.
-
-Converted labels to one-hot encoding.
-
-Split data into training, validation, and test sets.
-
-2. Feedforward Neural Network
-
-Implemented a flexible architecture that allows customization of:
-
-Number of hidden layers.
-
-Number of neurons per layer.
-
-Activation functions (ReLU, Sigmoid, Tanh for hidden layers, Softmax for output layer).
-
-Loss functions (Cross-Entropy Loss, Mean Squared Error).
-
-Forward propagation implemented in Forward_Propagation().
-
-3. Backpropagation & Optimization Algorithms
-
-Implemented backpropagation in Back_Propagation() to update weights.
-
-Supported multiple optimization algorithms:
-
-Stochastic Gradient Descent (SGD) (Stochastic_GD())
-
-Momentum-based GD (Momentum_GD())
-
-Nesterov Accelerated GD (Nesterov_GD())
-
-RMSProp (RMS_Opt())
-
-Adam (Adam_Opt())
-
-Nadam (NAdam_Opt())
-
-Code is designed for easy extensibility to add new optimization techniques.
-
-4. Hyperparameter Tuning using WandB
-
-Conducted hyperparameter search using WandB sweeps.
-
-Parameters tuned:
-
-Number of epochs (5, 10)
-
-Number of hidden layers (3, 4, 5)
-
-Hidden layer size (32, 64, 128)
-
-Weight decay (0, 0.0005, 0.5)
-
-Learning rate (1e-3, 1e-4)
-
-Optimizer (SGD, Momentum, Nesterov, RMSProp, Adam, Nadam)
-
-Batch size (16, 32, 64)
-
-Weight initialization (Random, Xavier)
-
-Activation functions (Sigmoid, Tanh, ReLU)
-
-Used Bayesian Optimization for an efficient hyperparameter search.
-
-Generated performance plots:
-
-Validation Loss vs. Epochs
-
-Validation Accuracy vs. Epochs
-
-Training Loss vs. Epochs
-
-Training Accuracy vs. Epochs
-
-Results
-
-Best hyperparameter configuration was found using WandB sweeps.
-
-Model achieved high validation accuracy with optimal hyperparameters.
-
-Graphs show trends in loss and accuracy over training epochs.
-
-How to Run
-
-Install dependencies:
-
-pip install numpy keras wandb
-
-Run training script:
-
-python train.py
-
-Run hyperparameter tuning with WandB:
-
-python sweep.py
-
-Conclusion
-
-This assignment successfully implements a feedforward neural network from scratch, with flexible architecture, multiple optimization methods, and efficient hyperparameter tuning using WandB. The model performs well on the Fashion-MNIST dataset and can be further improved with deeper architectures and advanced optimizers.
+# Feedforward Neural Network with Backpropagation
+
+## Overview
+This project implements a feedforward neural network from scratch using NumPy. The backpropagation algorithm is implemented without using any automatic differentiation packages. The network is trained on the Fashion-MNIST dataset to classify images into 10 clothing categories. Various optimization algorithms and hyperparameter tuning techniques are also explored.
+
+## Problem Statement
+The goal of this assignment is to implement a fully connected neural network and train it using the backpropagation algorithm. The network should be flexible in terms of the number of hidden layers and neurons per layer. The dataset used is Fashion-MNIST, consisting of 60,000 training images and 10,000 test images of size 28x28.
+
+## Code Structure
+- `train.py`: Contains the implementation of the feedforward neural network, weight initialization, activation functions, forward propagation, backpropagation, and optimization algorithms.
+- `data_processing.py`: Handles data loading, normalization, one-hot encoding, and dataset splitting.
+- `optimizers.py`: Implements different optimization techniques including SGD, Momentum-based GD, Nesterov accelerated GD, RMSprop, Adam, and Nadam.
+- `hyperparameter_tuning.py`: Configures and executes hyperparameter tuning using WandB sweeps.
+- `visualization.py`: Contains functions for visualizing dataset samples and training progress.
+
+## Implementation Details
+### Data Preprocessing
+- Loaded Fashion-MNIST dataset using `keras.datasets.fashion_mnist`.
+- Normalized pixel values for better training.
+- Converted labels into one-hot encoded format.
+- Split dataset into training, validation, and test sets.
+
+### Feedforward Neural Network
+- Flexible architecture to allow changes in the number of layers and neurons per layer.
+- Supports different activation functions: ReLU, Sigmoid, Tanh for hidden layers, and Softmax for output.
+- Supports different weight initialization methods: Random and Xavier.
+
+### Backpropagation
+- Implemented in `Back_Propogation()` function.
+- Updates weights using gradients computed for each layer.
+- Supports multiple loss functions: Cross-Entropy and Mean Squared Error.
+
+### Optimization Algorithms
+Each optimization algorithm is implemented as a separate function:
+- **SGD**: `Stochastic_GD()`
+- **Momentum-based GD**: `Momentum_GD()`
+- **Nesterov accelerated GD**: `Nesterov_GD()`
+- **RMSprop**: `RMS_Opt()`
+- **Adam**: `Adam_Opt()`
+- **Nadam**: `NAdam_Opt()`
+
+### Hyperparameter Tuning using WandB
+- Used `wandb.sweep` for hyperparameter optimization.
+- Explored different values for epochs, hidden layers, hidden layer sizes, weight decay, learning rate, optimizer, batch size, weight initialization, and activation functions.
+- Applied Bayesian Optimization to efficiently find the best hyperparameters.
+- Logged and visualized results using WandB.
+
+## Results and Analysis
+- Plotted **Validation Loss vs. Epochs**, **Validation Accuracy vs. Epochs**, **Training Loss vs. Epochs**, and **Training Accuracy vs. Epochs**.
+- Analyzed different hyperparameter settings to find the best performing configuration.
+
+## How to Run
+1. Install required dependencies:
+   ```bash
+   pip install numpy keras wandb matplotlib
+   ```
+2. Clone the repository and navigate to the project folder:
+   ```bash
+   git clone <repo-link>
+   cd <repo-folder>
+   ```
+3. Train the model:
+   ```bash
+   python train.py
+   ```
+4. Run hyperparameter tuning:
+   ```bash
+   python hyperparameter_tuning.py
+   ```
+
+## Acknowledgments
+This project was developed as part of an academic assignment for training a neural network from scratch using backpropagation on the Fashion-MNIST dataset.
