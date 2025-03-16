@@ -1,7 +1,6 @@
-# Feedforward Neural Network with Backpropagation
+# Feedforward Neural Network with Backpropagation On Fashion MNIST Dataset
 
-## Overview
-This project implements a feedforward neural network from scratch using NumPy. The backpropagation algorithm is implemented without using any automatic differentiation packages. The network is trained on the Fashion-MNIST dataset to classify images into 10 clothing categories. Various optimization algorithms and hyperparameter tuning techniques are also explored.
+This assignment contains a feedforward neural network from scratch using NumPy. The backpropagation algorithm is implemented without using any automatic differentiation packages. The network is trained on the Fashion-MNIST dataset to classify images into 10 clothing categories. Various optimization algorithms and hyperparameter tuning techniques are also explored.
 
 ## Problem Statement
 The goal of this assignment is to implement a fully connected neural network and train it using the backpropagation algorithm. The network should be flexible in terms of the number of hidden layers and neurons per layer. The dataset used is Fashion-MNIST, consisting of 60,000 training images and 10,000 test images of size 28x28.
@@ -9,9 +8,7 @@ The goal of this assignment is to implement a fully connected neural network and
 ## Code Structure
 - `train.py`: Contains the implementation of the feedforward neural network, weight initialization, activation functions, forward propagation, backpropagation, and optimization algorithms.
 - `data_processing.py`: Handles data loading, normalization, one-hot encoding, and dataset splitting.
-- `optimizers.py`: Implements different optimization techniques including SGD, Momentum-based GD, Nesterov accelerated GD, RMSprop, Adam, and Nadam.
-- `hyperparameter_tuning.py`: Configures and executes hyperparameter tuning using WandB sweeps.
-- `visualization.py`: Contains functions for visualizing dataset samples and training progress.
+- `optimizers.ipynb`: It has complete answers for asked questions in assignment. 
 
 ## Implementation Details
 ### Data Preprocessing
