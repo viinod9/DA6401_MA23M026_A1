@@ -6,9 +6,9 @@ This assignment contains a feedforward neural network from scratch using NumPy. 
 The goal of this assignment is to implement a fully connected neural network and train it using the backpropagation algorithm. The network should be flexible in terms of the number of hidden layers and neurons per layer. The dataset used is Fashion-MNIST, consisting of 60,000 training images and 10,000 test images of size 28x28.
 
 ## Code Structure
-- `train.py`: Contains the implementation of the feedforward neural network, weight initialization, activation functions, forward propagation, backpropagation, and optimization algorithms.
-- `data_processing.py`: Handles data loading, normalization, one-hot encoding, and dataset splitting.
-- `optimizers.ipynb`: It has complete answers for asked questions in assignment. 
+- `neural_network_fashion_MNIST.py`: Contains the implementation of the feedforward neural network, weight initialization, activation functions, forward propagation, backpropagation, and optimization algorithms.
+- `train.py`: Handles data loading, normalization, one-hot encoding, and dataset splitting.
+- `MA23M026_Assignment1.ipynb`: It has complete answers for asked questions in assignment. 
 
 ## Implementation Details
 ### Data Preprocessing
