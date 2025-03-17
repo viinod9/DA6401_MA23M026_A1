@@ -71,5 +71,5 @@ Each optimization algorithm is implemented as a separate function in `neural_net
    you will able to run the code for default parameters.
 
 
-## Acknowledgments
-This project was developed as part of an academic assignment DA6401 for training a neural network from scratch using backpropagation on the Fashion-MNIST dataset.
+## Context
+This project was developed as part of an assignment in course DA6401 for training a neural network from scratch using backpropagation on the Fashion-MNIST dataset.
