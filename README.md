@@ -28,7 +28,7 @@ The goal of this assignment is to implement a fully connected neural network and
 - Supports multiple loss functions: Cross-Entropy and Mean Squared Error.
 
 ### Optimization Algorithms
-Each optimization algorithm is implemented as a separate function:
+Each optimization algorithm is implemented as a separate function in `neural_network_fashion_MNIST.py` file:
 - **SGD**: `Stochastic_GD()`
 - **Momentum-based GD**: `Momentum_GD()`
 - **Nesterov accelerated GD**: `Nesterov_GD()`
@@ -49,7 +49,12 @@ Each optimization algorithm is implemented as a separate function:
 ## How to Run
 1. Install required dependencies:
    ```bash
-   pip install numpy keras wandb matplotlib
+   pip install numpy tensorflow matplotlib seaborn scikit-learn wandb
+   ```
+
+2. Initialize Weights & Biases:
+   ```bash
+   wandb login
    ```
 
 3. Train the model:
