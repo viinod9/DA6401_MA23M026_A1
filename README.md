@@ -52,11 +52,10 @@ Each optimization algorithm is implemented as a separate function in `neural_net
    pip install numpy tensorflow matplotlib seaborn scikit-learn wandb
    ```
 2. Download
-   ```bash
+   ```
    neural_network_fashion_MNIST.py```
     and
-   ```bash
-   train.py```
+   ``` train.py ```
    files and keep it in same folder
 4. Initialize Weights & Biases:
    ```bash
