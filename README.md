@@ -54,7 +54,8 @@ Each optimization algorithm is implemented as a separate function in `neural_net
 2. Download
    ```
    neural_network_fashion_MNIST.py
-   train.py ```
+   train.py
+   ```
    
    files and keep it in same folder
 4. Initialize Weights & Biases:
