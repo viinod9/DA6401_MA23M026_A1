@@ -1,4 +1,4 @@
-# Feedforward Neural Network with Backpropagation On Fashion MNIST Dataset
+# Feedforward Neural Network with Backpropagation from Scratch On Fashion MNIST Dataset
 
 This assignment contains a feedforward neural network from scratch using NumPy. The backpropagation algorithm is implemented without using any automatic differentiation packages. The network is trained on the Fashion-MNIST dataset to classify images into 10 clothing categories. Various optimization algorithms and hyperparameter tuning techniques are also explored.
 
