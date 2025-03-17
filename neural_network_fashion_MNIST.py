@@ -11,7 +11,8 @@ from sklearn.metrics import confusion_matrix
 
 
 import wandb
-wandb.login()
+#wandb.login()
+wandb.login(key = "acdc26d2fc17a56e83ea3ae6c10e496128dee648")
 
 import wandb
 import numpy as np
@@ -318,11 +319,11 @@ def Nesterov_GD(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidd
 # trained_weights2 = Nesterov_GD(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, momentum=0.9, loss_function='cross_entropy')
 # wandb.finish()
 
-def RMS_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta=0.9, epsilon=1e-8, loss_function='cross_entropy'):
+def RMS_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, beta, epsilon, loss_function, input_size, output_size):
     wandb.init(project="rmsprop")
     weights = Weights_Initialization(num_hidden_layer, num_nodes_hidden_layers, weight, input_size, output_size)
     cache = {key: np.zeros_like(value) for key, value in weights.items()}
-
+    print("Its for RMS")
     for epoch in range(epochs):
         for i in range(0, x_train.shape[0], batch_size):
             X_batch = x_train[i:i+batch_size]
@@ -367,12 +368,12 @@ def RMS_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_l
 # trained_weights3 = RMS_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta=0.9, epsilon=1e-8, loss_function='cross_entropy')
 # wandb.finish()
 
-def Adam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta1=0.9, beta2=0.999, epsilon=1e-8, loss_function='cross_entropy'):
+def Adam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, beta1, beta2, epsilon, loss_function, input_size, output_size):
     wandb.init(project="adam")
     weights = Weights_Initialization(num_hidden_layer, num_nodes_hidden_layers, weight, input_size, output_size)
     m = {key: np.zeros_like(value) for key, value in weights.items()}
     v = {key: np.zeros_like(value) for key, value in weights.items()}
-
+    print("Its for Adam")
     for epoch in range(epochs):
         for i in range(0, x_train.shape[0], batch_size):
             X_batch = x_train[i:i+batch_size]
@@ -420,12 +421,12 @@ def Adam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_
 # trained_weights4 = Adam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta1=0.9, beta2=0.999, epsilon=1e-8, loss_function='cross_entropy')
 # wandb.finish()
 
-def NAdam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta1=0.9, beta2=0.999, epsilon=1e-8, loss_function='cross_entropy'):
+def NAdam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, beta1, beta2, epsilon, loss_function, input_size, output_size):
     wandb.init(project="nadam")
     weights = Weights_Initialization(num_hidden_layer, num_nodes_hidden_layers, weight, input_size, output_size)
     m = {key: np.zeros_like(value) for key, value in weights.items()}
     v = {key: np.zeros_like(value) for key, value in weights.items()}
-
+    print("Its for Nadam")
     for epoch in range(epochs):
         for i in range(0, x_train.shape[0], batch_size):
             X_batch = x_train[i:i+batch_size]

@@ -1,7 +1,7 @@
 import argparse
 import numpy as np
 import wandb
-from neural_network_fashion_MNIST import Data_Preprocess, Momentum_GD, Nesterov_GD
+from neural_network_fashion_MNIST import Data_Preprocess, Momentum_GD, Nesterov_GD, Stochastic_GD, RMS_Opt, Adam_Opt, NAdam_Opt
 
 parser = argparse.ArgumentParser(description='Neural Network Training Configuration')
 
@@ -47,6 +47,9 @@ optimizer = args.optimizer
 lr = args.learning_rate
 momentum = args.momentum
 beta = args.beta
+beta1 = args.beta1
+beta2 = args.beta2
+epsilon = args.epsilon
 epochs = args.epochs
 wandb_project = args.wandb_project
 wandb_entity = args.wandb_entity
@@ -67,10 +70,10 @@ if args.dataset == 'fashion_mnist':
 
     #weights1 = Stochastic_GD(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size,loss, input_size=28*28, output_size=10);
     #weights2 = Momentum_GD(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, momentum,loss, input_size= 28*28, output_size=10)
-    weights3 = Nesterov_GD(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, momentum, loss, input_size = 28*28, output_size=10)
-    #weights4 = RMS_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size = 28*28, output_size=10, beta=0.9, epsilon=1e-8, loss_function='cross_entropy')
-    #weights5 = Adam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta1=0.9, beta2=0.999, epsilon=1e-8, loss_function='cross_entropy')
-    #weights6 = NAdam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, input_size, output_size, beta1=0.9, beta2=0.999, epsilon=1e-8, loss_function='cross_entropy')
+    #weights3 = Nesterov_GD(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, momentum, loss, input_size = 28*28, output_size=10)
+    #weights4 = RMS_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, beta, epsilon, loss, input_size = 28*28, output_size=10)
+    weights5 = Adam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, beta1, beta2, epsilon, loss, input_size=28*28, output_size=10)
+    #weights6 = NAdam_Opt(lr, x_train, y_train, x_val, y_val, epochs, activation, num_hidden_layer, num_nodes_hidden_layers, weight, batch_size, beta1, beta2, epsilon, loss, input_size=28*28, output_size=10)
 
 
 
