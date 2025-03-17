@@ -48,25 +48,25 @@ Each optimization algorithm is implemented as a separate function in `neural_net
 
 ## How to Run
 1. Install required dependencies:
-   ```bash
+   ```
    pip install numpy tensorflow matplotlib seaborn scikit-learn wandb
    ```
 2. Download
    ```
    neural_network_fashion_MNIST.py```
-    and
    ``` train.py ```
+   
    files and keep it in same folder
 4. Initialize Weights & Biases:
-   ```bash
+   ```
    wandb login
    ```
 
 5. Train the model: Type this below command in command line interface (CLI)
-   ```bash
+   ```
    python train.py --wandb_entity myname --wandb_project myprojectname```
-   or
-   ```bash
+   
+   ```
    python train.py
    ```
    you will able to run the code for default parameters.
