@@ -46,6 +46,12 @@ Each optimization algorithm is implemented as a separate function in `neural_net
 - Plotted **Validation Loss vs. Epochs**, **Validation Accuracy vs. Epochs**, **Training Loss vs. Epochs**, and **Training Accuracy vs. Epochs**.
 - Analyzed different hyperparameter settings to find the best performing configuration.
 
+## Wandb Report
+https://api.wandb.ai/links/viinod9-iitm/lcx31rq7
+
+## Github Repo Link
+https://github.com/viinod9/DA6401_MA23M026_A1
+
 ## How to Run
 1. Install required dependencies:
    ```
